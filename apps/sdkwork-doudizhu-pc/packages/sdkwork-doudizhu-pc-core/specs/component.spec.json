@@ -21,7 +21,7 @@
         "credentialMode": "authenticated-app-api"
       },
       {
-        "workspace": "sdkwork-match-app-sdk",
+        "workspace": "sdkwork-doudizhu-app-sdk",
         "surface": "app-api",
         "credentialMode": "authenticated-app-api"
       }
@@ -31,18 +31,18 @@
     "permissionComposition": {
       "inheritanceMode": "module-catalog-with-overrides",
       "applicationModule": {
-        "manifestRef": "../../../../../specs/iam.module.manifest.json"
+        "manifestRef": "../../../../specs/iam.module.manifest.json"
       },
       "moduleCatalogRefs": [
         {
           "moduleId": "doudizhu",
-          "manifestRef": "../../../../../specs/iam.module.manifest.json",
+          "manifestRef": "../../../../specs/iam.module.manifest.json",
           "inheritPermissions": true,
           "inheritRoles": true
         },
         {
           "moduleId": "match",
-          "manifestRef": "../../../../../../sdkwork-xiangqi/specs/iam.module.manifest.json",
+          "manifestRef": "../../../../../sdkwork-xiangqi/specs/iam.module.manifest.json",
           "inheritPermissions": true,
           "inheritRoles": true
         }

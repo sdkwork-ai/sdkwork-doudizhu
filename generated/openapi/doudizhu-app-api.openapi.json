@@ -17,7 +17,7 @@
   "paths": {
     "/app/v3/api/doudizhu/matches": {
       "get": {
-        "operationId": "doudizhu.match.list",
+        "operationId": "match.list",
         "tags": [
           "doudizhu"
         ],
@@ -61,7 +61,7 @@
     },
     "/app/v3/api/doudizhu/matches/{matchId}": {
       "get": {
-        "operationId": "doudizhu.match.retrieve",
+        "operationId": "match.retrieve",
         "tags": [
           "doudizhu"
         ],
