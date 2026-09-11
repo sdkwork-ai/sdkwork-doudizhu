@@ -1,10 +1,14 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-routes-doudizhu-app-api"
 version.workspace = true
 edition.workspace = true
 license = "Apache-2.0"
 description = "SDKWork doudizhu match app-api router."
 
+
+[lints]
+workspace = true
 [lib]
 name = "sdkwork_routes_doudizhu_app_api"
 path = "src/lib.rs"
