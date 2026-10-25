@@ -1,48 +1,58 @@
 {
   "schemaVersion": 3,
-  "kind": "sdkwork.app",
+  "kind": "agent.app",
   "app": {
-    "name": "sdkwork-doudizhu",
+    "key": "sdkwork-doudizhu-pc",
+    "name": "SDKWork Doudizhu PC",
     "displayName": "SDKWork Doudizhu",
-    "version": "0.1.0",
-    "description": "SDKWork doudizhu platform for matches, rooms, and leaderboards",
-    "owner": "sdkwork-doudizhu",
-    "domain": "game",
-    "capability": "match",
-    "key": "sdkwork-doudizhu",
+    "description": "PC browser application for SDKWork doudizhu matches, rooms, and leaderboards.",
+    "vendor": "SDKWork",
+    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-doudizhu-pc",
     "appType": "APP_HTML",
-    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-doudizhu"
+    "versionSource": "package.json",
+    "identifiers": {
+      "packageName": null,
+      "bundleId": null,
+      "desktopAppId": null,
+      "containerImage": null
+    }
   },
   "backend": {
     "profileKey": "backend-root-admin",
-    "accessTokenPermissionScope": [
-      "iam.users.read",
-      "iam.organizations.read",
-      "iam.roles.read",
-      "iam.permissions.read"
-    ],
-    "tenantId": "100001",
-    "organizationId": "0"
+    "ownerMode": "tenant",
+    "grantMode": "current",
+    "platform": "WEB",
+    "appId": null,
+    "organizationId": "0",
+    "tenantId": "100001"
   },
   "runtime": {
-    "apiBaseUrl": "http://localhost:8096",
-    "appApiPrefix": "/app/v3/api",
-    "backendApiPrefix": "/backend/v3/api",
+    "family": "server",
+    "framework": "react",
+    "runtimes": [
+      "BROWSER"
+    ],
+    "deliveryModes": [
+      "DIRECT_DOWNLOAD"
+    ],
+    "defaultPlatform": "WEB",
+    "defaultArchitecture": "x64",
     "supportedDeploymentProfiles": [
       "standalone",
       "cloud"
     ],
     "defaultDeploymentProfile": "standalone",
-    "family": "server",
-    "framework": "rust-axum"
+    "apiBaseUrl": "http://localhost:8096",
+    "appApiPrefix": "/app/v3/api",
+    "backendApiPrefix": "/backend/v3/api"
   },
   "media": {
     "icons": {
       "primary": {
-        "id": "sdkwork-doudizhu-primary-icon",
+        "id": "sdkwork-doudizhu-pc-primary-icon",
         "type": "ICON",
         "purpose": "PRIMARY",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu/assets/icon-1024.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu-pc/assets/icon-1024.png",
         "platform": "APP",
         "locale": "en-US",
         "width": 1024,
@@ -63,10 +73,10 @@
     },
     "screenshots": [
       {
-        "id": "sdkwork-doudizhu-web-screenshot",
+        "id": "sdkwork-doudizhu-pc-web-screenshot",
         "type": "SCREENSHOT",
         "purpose": "CATALOG_SCREENSHOT",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu/media/web-screenshot.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu-pc/media/web-screenshot.png",
         "platform": "WEB",
         "locale": "en-US",
         "deviceClass": "BROWSER",
@@ -87,10 +97,10 @@
     ],
     "previews": [
       {
-        "id": "sdkwork-doudizhu-catalog-preview",
+        "id": "sdkwork-doudizhu-pc-catalog-preview",
         "type": "PREVIEW_IMAGE",
         "purpose": "CATALOG_PREVIEW",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu/media/preview-cover.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu-pc/media/preview-cover.png",
         "platform": "WEB",
         "locale": "en-US",
         "width": 1600,
@@ -120,57 +130,72 @@
     "installPlatforms": [
       "WEB"
     ],
-    "defaultPackageId": "linux-x64-standalone-server-tar-gz",
+    "defaultPackageId": "web-browser-standalone-zip",
+    "storeUrl": "https://sdkwork.com/apps/sdkwork-doudizhu-pc",
+    "stores": [],
+    "config": {
+      "workspaceRoot": ".",
+      "framework": "react"
+    },
     "installSkill": {
       "name": "sdkwork-skills-app"
+    }
+  },
+  "environments": {
+    "development": {
+      "accessUrl": "http://localhost:3000",
+      "deployUrl": "http://localhost:3000",
+      "deployEnv": "dev"
     },
-    "stores": [],
-    "storeUrl": "https://sdkwork.com/apps/sdkwork-doudizhu"
+    "production": {
+      "accessUrl": "https://doudizhu.sdkwork.com",
+      "deployUrl": "https://doudizhu.sdkwork.com",
+      "deployEnv": "production"
+    }
   },
   "artifacts": {
     "installConfig": {
-      "defaultPackageId": "linux-x64-standalone-server-tar-gz",
-      "installCommand": "sdkwork install sdkwork-doudizhu",
-      "launchCommand": "sdkwork open sdkwork-doudizhu",
-      "uninstallCommand": "sdkwork uninstall sdkwork-doudizhu",
+      "defaultPackageId": "web-browser-standalone-zip",
+      "installCommand": "sdkwork install sdkwork-doudizhu-pc",
+      "launchCommand": "sdkwork open sdkwork-doudizhu-pc",
+      "uninstallCommand": "sdkwork uninstall sdkwork-doudizhu-pc",
       "packages": [
         {
-          "id": "linux-x64-standalone-server-tar-gz",
-          "name": "Sdkwork Doudizhu standalone server archive",
+          "id": "web-browser-standalone-zip",
+          "name": "SDKWork Doudizhu PC Web",
           "sourceType": "BINARY_URL",
-          "packageFormat": "TAR_GZ",
-          "platform": "API",
-          "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu/STABLE/0.1.0/linux-x64-standalone-server-tar-gz-0.1.0.tar.gz",
+          "packageFormat": "ZIP",
+          "platform": "WEB",
           "architecture": "x64",
-          "checksumAlgorithm": "SHA-256",
-          "checksum": "9f3260c20dc2e0a72ffb11bcf3c9d27339a90eaa4e80ca6c739a52e707f87975",
           "deploymentProfile": "standalone",
-          "runtimeTarget": "server",
-          "profileBinding": "fixed",
+          "runtimeTarget": "browser",
           "enabled": true,
-          "metadata": {
-            "releaseBuildDeferred": false
-          }
+          "profileBinding": "fixed",
+          "targetPlatform": "web",
+          "clientArchitecture": "pc-web",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu-pc/STABLE/0.1.0/web-browser-standalone-zip-0.1.0.zip"
         },
         {
           "id": "linux-x64-cloud-server-tar-gz",
-          "name": "Sdkwork Doudizhu cloud server archive",
+          "name": "Sdkwork Doudizhu Pc cloud server archive",
           "sourceType": "BINARY_URL",
           "packageFormat": "TAR_GZ",
           "platform": "API",
-          "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-doudizhu-pc/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
           "architecture": "x64",
           "checksumAlgorithm": "SHA-256",
-          "checksum": "661f0314d4d24c7c2dddc0ed4c319658f72d0a7acef17b732ad12c334a6a34a0",
+          "checksum": "14f089ff0202ac965fc7338277545dd462588e857b6598a1c5c7081a2db95790",
           "deploymentProfile": "cloud",
           "runtimeTarget": "server",
           "profileBinding": "fixed",
           "enabled": true,
-          "metadata": {
-            "releaseBuildDeferred": false
-          }
+          "metadata": {}
         }
-      ]
+      ],
+      "metadata": {
+        "workspaceRoot": ".",
+        "packageManager": "pnpm"
+      }
     }
   },
   "release": {
@@ -192,7 +217,7 @@
           "Download package matrix normalized"
         ],
         "packageIds": [
-          "linux-x64-standalone-server-tar-gz",
+          "web-browser-standalone-zip",
           "linux-x64-cloud-server-tar-gz"
         ],
         "publishedAt": "2026-05-07T00:00:00Z",
@@ -208,8 +233,19 @@
     "signatureRequired": false,
     "sbomRequired": false
   },
+  "devApp": {
+    "build": {
+      "targets": [
+        "browser"
+      ]
+    },
+    "sourceRoot": "."
+  },
   "metadata": {
-    "deploymentConfig": "etc/sdkwork.deployment.config.json",
+    "domain": "game",
+    "capability": "match",
+    "owner": "sdkwork-doudizhu",
+    "applicationRoot": "../..",
     "standardOwner": "sdkwork-platform"
   }
 }

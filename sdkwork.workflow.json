@@ -6,7 +6,7 @@
     "name": "SDKWork Doudizhu",
     "repository": "sdkwork-ai/sdkwork-doudizhu",
     "sourcePath": ".",
-    "configPath": "sdkwork.app.config.json"
+    "configPath": "agent.app.config.json"
   },
   "release": {
     "artifactPrefix": "sdkwork-doudizhu",
