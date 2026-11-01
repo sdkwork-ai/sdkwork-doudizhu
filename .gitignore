@@ -7,7 +7,7 @@ target/
 *.log
 .env.local
 .env.*.local
-.env.postgres
+config/host/postgres.env
 *.local.toml
 *.zip
 
@@ -19,7 +19,7 @@ target/
 **/target/
 !.env.example
 !.env.*.example
-!.env.postgres.example
+!config/host/postgres.env.example
 **/dist/
 coverage/
 **/.pnpm-store/
